@@ -1,26 +1,73 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-	<meta charset=utf-8 />
-		<title>Return first and last name from a form</title>
-		<style type="text/css">
-			body {margin: 30px;}
-		</style> 
-	<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Login</title>
+
+    <style>
+
+        body{
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            font-family:Arial;
+        }
+
+        form{
+            border:2px solid black;
+            padding:20px;
+            width:300px;
+        }
+
+        input{
+            width:100%;
+            padding:8px;
+            margin-top:5px;
+            margin-bottom:15px;
+        }
+
+        button{
+            padding:10px 20px;
+            cursor:pointer;
+        }
+
+    </style>
 </head>
 
 <body>
-	<form id="form1" onsubmit="getFormvalue()">
-		First name: <input type="text" name="fname"><br>
-		Last name: <input type="text" name="lname"><br>
-		<input type="submit" value="Submit">
-	</form>
-	
-    <script type="text/javascript" src="./script.js">
+
+    <form onsubmit="getFormvalue(event)">
+
+        <label>First Name</label>
+        <input type="text" name="fname" placeholder="Enter First Name">
+
+        <label>Last Name</label>
+        <input type="text" name="lname" placeholder="Enter Last Name">
+
+        <button type="submit">Submit</button>
+
+    </form>
+
+<script>
+
+function getFormvalue(event){
+
+    event.preventDefault()
+
+    let fname =
+    document.querySelector('input[name="fname"]')
+    .value.trim()
+
+    let lname =
+    document.querySelector('input[name="lname"]')
+    .value.trim()
+
+    alert(`${fname} ${lname}`)
+}
+
 </script>
 
 </body>
-
 </html>
